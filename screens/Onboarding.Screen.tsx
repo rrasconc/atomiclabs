@@ -1,6 +1,6 @@
 import { Dimensions, Image, ScrollView, StyleSheet, View } from 'react-native';
 import { GallaxyScrollView } from '../components/Gallaxy.Scroll.View';
-import { COLORS, SPACING } from '../constants/theme';
+import { COLORS } from '../constants/theme';
 import { ScrollDownButton } from '../components/Scroll.Down.Button';
 import { SecondaryButton } from '../components/Secondary.Button';
 import { Slogan } from '../components/Slogan';
@@ -20,8 +20,14 @@ export function OnboardingScreen() {
   const servicesRef = useRef<View>(null);
 
   const handleScrollDownPress = () => {
-    servicesRef?.current?.measureInWindow((_x, y) => {
-      scrollRef?.current?.scrollTo({ y: y - SPACING.large * 2 });
+    if (!servicesRef.current) {
+      return;
+    }
+    servicesRef.current.measure((y) => {
+      if (!scrollRef.current) {
+        return;
+      }
+      scrollRef.current.scrollTo({ y: y });
     });
   };
 
