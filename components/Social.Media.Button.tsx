@@ -1,8 +1,9 @@
-import { Linking, TouchableOpacity, View } from 'react-native';
 import Icon from '@expo/vector-icons/FontAwesome';
+import { Linking, TouchableOpacity } from 'react-native';
+import { verticalScale } from 'react-native-size-matters';
+
 import { COLORS, SPACING } from '../constants/theme';
 import type { SocialMediaButtonProps } from '../constants/types';
-import { verticalScale } from 'react-native-size-matters';
 
 export function SocialMediaButton({ icon, url }: SocialMediaButtonProps) {
   const handlePress = () => {

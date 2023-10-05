@@ -1,6 +1,7 @@
 import { StyleSheet, TouchableOpacityProps, TouchableOpacity, View } from 'react-native';
-import { BORDER_RADIUS, COLORS, SPACING } from '../constants/theme';
+
 import { Text } from './Text';
+import { BORDER_RADIUS, COLORS, SPACING } from '../constants/theme';
 
 interface SecondaryButtonProps extends TouchableOpacityProps {
   text: string;

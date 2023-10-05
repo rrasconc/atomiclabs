@@ -1,4 +1,5 @@
 import { View, StyleSheet } from 'react-native';
+
 import { HeaderText } from './Header.Text';
 import { COLORS, FONT } from '../constants/theme';
 

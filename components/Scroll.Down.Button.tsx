@@ -1,18 +1,15 @@
-import { StyleSheet, TouchableOpacityProps, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { scale } from 'react-native-size-matters';
+
 import { Text } from './Text';
-import { COLORS, FONT, SPACING } from '../constants/theme';
-import Icons from '@expo/vector-icons/Ionicons';
+import type { ScrollDownButtonProps } from '../constants/types';
 
-interface ScrollDownButton extends TouchableOpacityProps {
-  text: string;
-}
+const chevronImg = require('../assets/chevron.png');
 
-export function ScrollDownButton({ text, ...otherProps }: ScrollDownButton) {
+export function ScrollDownButton({ text, ...otherProps }: ScrollDownButtonProps) {
   return (
     <TouchableOpacity style={styles.container} {...otherProps}>
-      <View style={styles.iconContainer}>
-        <Icons size={FONT.large} name="chevron-down" />
-      </View>
+      <Image style={styles.icon} source={chevronImg} />
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
@@ -22,14 +19,10 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    gap: SPACING.small,
   },
-  iconContainer: {
-    backgroundColor: COLORS.white,
-    padding: SPACING.small,
-    borderRadius: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
+  icon: {
+    height: scale(50),
+    width: scale(50),
   },
   text: {
     fontWeight: '600',

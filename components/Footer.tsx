@@ -1,7 +1,8 @@
 import { View, StyleSheet } from 'react-native';
+
+import { SocialMediaButton } from './Social.Media.Button';
 import { Text } from './Text';
 import { COLORS, FONT, FOOTER_HEIGHT, SPACING } from '../constants/theme';
-import { SocialMediaButton } from './Social.Media.Button';
 
 export function Footer() {
   return (
@@ -10,8 +11,8 @@ export function Footer() {
       <Text style={[styles.text, styles.anchor]}>Aviso de privacidad</Text>
 
       <View style={styles.socialMediaContainer}>
-        <SocialMediaButton icon={'linkedin'} url={'https://www.linkedin.com/company/atomic-32/'} />
-        <SocialMediaButton icon={'twitter'} url={'https://twitter.com/Atomic_32'} />
+        <SocialMediaButton icon="linkedin" url="https://www.linkedin.com/company/atomic-32/" />
+        <SocialMediaButton icon="twitter" url="https://twitter.com/Atomic_32" />
       </View>
     </View>
   );

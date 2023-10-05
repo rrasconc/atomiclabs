@@ -1,4 +1,5 @@
 import { Text as DefaultText, StyleSheet, TextProps } from 'react-native';
+
 import { COLORS, FONT } from '../constants/theme';
 
 export function Text({ style: customStyle, ...otherProps }: TextProps) {

@@ -1,8 +1,7 @@
-import { ImageBackground, ScrollView, ScrollViewProps, StyleSheet } from 'react-native';
-import { COLORS, FOOTER_HEIGHT, SPACING } from '../constants/theme';
 import { LegacyRef, forwardRef } from 'react';
+import { ScrollView, ScrollViewProps, StyleSheet } from 'react-native';
 
-const gallaxyImgSrc = require('../assets/gallaxy.png');
+import { COLORS, FOOTER_HEIGHT, SPACING } from '../constants/theme';
 
 //Scrollview with a background image of a gallaxy
 export const GallaxyScrollView = forwardRef(function GallaxyScrollView(

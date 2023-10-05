@@ -1,5 +1,4 @@
-import { StyleSheet, Image, View } from 'react-native';
-import { SPACING } from '../constants/theme';
+import { StyleSheet, Image } from 'react-native';
 import { verticalScale } from 'react-native-size-matters';
 
 const logoImgSrc = require('../assets/logo.png');

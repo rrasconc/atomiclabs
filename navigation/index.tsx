@@ -1,9 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { OnboardingScreen } from '../screens/Onboarding.Screen';
 import { HeaderLogo } from '../components/Header.Logo';
 import { COLORS } from '../constants/theme';
+import { OnboardingScreen } from '../screens/Onboarding.Screen';
 
 const Stack = createNativeStackNavigator();
 

@@ -1,7 +1,7 @@
 import { View, StyleSheet, Dimensions, Image } from 'react-native';
+
 import { HeaderText } from './Header.Text';
 import { COLORS, SPACING } from '../constants/theme';
-import { Text } from './Text';
 
 const peopleSrc = require('../assets/people.png');
 const peopleRatio = 416 / 1209;

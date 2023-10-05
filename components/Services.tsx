@@ -1,8 +1,9 @@
+import { LegacyRef, forwardRef } from 'react';
 import { View, StyleSheet } from 'react-native';
+
 import { HeaderText } from './Header.Text';
 import { ServicesCarousel } from './Services.Carousel';
 import { COLORS, SPACING } from '../constants/theme';
-import { LegacyRef, forwardRef } from 'react';
 
 export const Services = forwardRef(function Services(_props, ref: LegacyRef<View>) {
   return (

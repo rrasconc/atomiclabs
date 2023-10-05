@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Dimensions,
   FlatList,
@@ -6,12 +7,12 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import type { ServiceGroup } from '../constants/types';
-import { COLORS, SPACING } from '../constants/theme';
-import { SERVICE_GROUPS } from '../constants/content';
-import { ServiceGroupCard } from './Service.Group.Card';
 import { scale } from 'react-native-size-matters';
-import { useState } from 'react';
+
+import { ServiceGroupCard } from './Service.Group.Card';
+import { SERVICE_GROUPS } from '../constants/content';
+import { COLORS, SPACING } from '../constants/theme';
+import type { ServiceGroup } from '../constants/types';
 
 const { width } = Dimensions.get('window');
 const cardWidth = width - SPACING.medium * 2;

@@ -1,8 +1,9 @@
-import { View, StyleSheet, Dimensions, Image } from 'react-native';
-import { HeaderText } from './Header.Text';
-import { BORDER_RADIUS, COLORS, SPACING } from '../constants/theme';
+import { View, StyleSheet, Image } from 'react-native';
 import { verticalScale, scale } from 'react-native-size-matters';
+
+import { HeaderText } from './Header.Text';
 import { Text } from './Text';
+import { BORDER_RADIUS, COLORS, SPACING } from '../constants/theme';
 import type { ServiceGroupCardProps } from '../constants/types';
 
 export function ServiceGroupCard({ title, services, image, width }: ServiceGroupCardProps) {

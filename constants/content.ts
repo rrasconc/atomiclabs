@@ -1,8 +1,8 @@
 import type { ServiceGroup, TeamMember } from './types';
 
-const imaginaImg = require('../assets/imagina.png');
-const exploraImg = require('../assets/explora.png');
 const conquistaImg = require('../assets/conquista.png');
+const exploraImg = require('../assets/explora.png');
+const imaginaImg = require('../assets/imagina.png');
 
 export const SERVICE_GROUPS: ServiceGroup[] = [
   {
@@ -27,24 +27,6 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
       'Ciberseguridad',
       'Servicios de la Nube',
     ],
-    image: conquistaImg,
-  },
-];
-
-export const TEAM_MEMBERS: TeamMember[] = [
-  {
-    name: 'Ramón Gómez',
-    position: 'Front-end developer',
-    image: imaginaImg,
-  },
-  {
-    name: 'Ximena Mejía',
-    position: 'UX Designer',
-    image: exploraImg,
-  },
-  {
-    name: 'Jaime Domínguez',
-    position: 'Back-end developer',
     image: conquistaImg,
   },
 ];
