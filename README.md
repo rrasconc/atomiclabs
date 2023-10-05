@@ -40,6 +40,7 @@ Con esto se inicia el servidor de desarrollo de Expo y podrás escanear el códi
 Para correr el proyecto en el emulador puedes presionar la tecla `i` (iOS) o `a` (Android) en la terminal una vez que el servidor de desarrollo de Expo esté activo:
 
 También puedes utilizar los siguientes comandos para arrancar el servidor de desarrollo y correr la app en el emulador:
+
 Android:
 
 ```bash
