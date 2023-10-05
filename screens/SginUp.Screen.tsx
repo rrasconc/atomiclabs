@@ -100,7 +100,8 @@ export function SginUpScreen() {
           <View style={styles.titleContainer}>
             <StepDot number={2} status="inProgress" size="large" />
             <HeaderText style={styles.title} adjustsFontSizeToFit={false} numberOfLines={2}>
-              VALIDA TU <HeaderText style={globalStyles.highlightText}> CELULAR</HeaderText>
+              VALIDA TU{'\n'}
+              <HeaderText style={globalStyles.highlightText}>CELULAR</HeaderText>
             </HeaderText>
           </View>
 
@@ -133,9 +134,10 @@ export function SginUpScreen() {
         </>
       )}
 
-      {currentStep.step === 0 ? (
+      {currentStep.step === 1 && (
         <Image resizeMode="contain" style={styles.img} source={astro3Img} />
-      ) : (
+      )}
+      {currentStep.step === 0 && (
         <Image resizeMode="contain" style={styles.img} source={astro2Img} />
       )}
 
@@ -147,11 +149,13 @@ export function SginUpScreen() {
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    gap: -SPACING.medium,
     alignItems: 'center',
   },
   title: {
     textAlign: 'left',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   img: {
     alignSelf: 'center',

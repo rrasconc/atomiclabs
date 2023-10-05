@@ -13,8 +13,8 @@ export function TextInput({ label, error, ...otherProps }: TextInputProps) {
       <View
         style={[styles.textInputContainer, { borderColor: error ? COLORS.danger : COLORS.white }]}>
         <DefaultTextInput style={styles.textInput} {...otherProps} />
-        <View style={{ marginLeft: 'auto', backgroundColor: COLORS.white, padding: SPACING.small }}>
-          <Icon size={FONT.medium} name="lock" />
+        <View style={styles.iconContainer}>
+          <Icon size={FONT.medium} color={COLORS.gray} name="lock" />
         </View>
       </View>
       <Text style={styles.textError}>{error}</Text>
@@ -43,5 +43,10 @@ const styles = StyleSheet.create({
     fontSize: FONT.small,
     fontWeight: '700',
     marginTop: -SPACING.extraSmall,
+  },
+  iconContainer: {
+    marginLeft: 'auto',
+    backgroundColor: COLORS.white,
+    padding: SPACING.small,
   },
 });

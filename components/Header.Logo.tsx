@@ -1,5 +1,5 @@
 import { StyleSheet, Image } from 'react-native';
-import { verticalScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters';
 
 const logoImgSrc = require('../assets/logo.png');
 
@@ -11,5 +11,6 @@ const styles = StyleSheet.create({
   logo: {
     height: verticalScale(28),
     resizeMode: 'contain',
+    width: scale(200),
   },
 });

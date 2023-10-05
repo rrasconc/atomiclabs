@@ -1,22 +1,25 @@
 import { View, StyleSheet } from 'react-native';
 
 import { HeaderText } from './Header.Text';
-import { COLORS, FONT } from '../constants/theme';
+import { COLORS, FONT, SPACING } from '../constants/theme';
 
 export function Slogan() {
   return (
-    <View>
+    <View style={styles.container}>
       <HeaderText style={styles.text}>Desarrolla todo</HeaderText>
       <HeaderText style={[styles.highlightText, styles.text]}>tu POTENCIAL</HeaderText>
-      <HeaderText>dentro del equipo</HeaderText>
+      <HeaderText style={styles.text}>dentro del equipo</HeaderText>
       <HeaderText style={[styles.highlightText, styles.text]}>
-        ATOMIC<HeaderText>LABS</HeaderText>
+        ATOMIC<HeaderText style={styles.text}>LABS</HeaderText>
       </HeaderText>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    gap: -SPACING.small,
+  },
   highlightText: {
     color: COLORS.orange,
   },

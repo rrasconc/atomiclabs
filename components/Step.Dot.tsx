@@ -1,3 +1,4 @@
+import Icon from '@expo/vector-icons/FontAwesome';
 import { View, StyleSheet } from 'react-native';
 
 import { Text } from './Text';
@@ -15,7 +16,8 @@ export function StepDot({ status, size, number }: StepDotProps) {
         status === 'pending' ? styles.pending : styles.inProgress,
         { height: dotSize, width: dotSize },
       ]}>
-      <Text style={[styles.text, { fontSize }]}>{number}</Text>
+      {status !== 'completed' && <Text style={[styles.text, { fontSize }]}>{number}</Text>}
+      {status === 'completed' && <Icon name="check" size={FONT.small} color={COLORS.white} />}
     </View>
   );
 }

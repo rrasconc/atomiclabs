@@ -15,14 +15,15 @@ export const FONT = {
   small: scale(14),
   medium: scale(18),
   large: scale(32),
-  extraLarge: scale(48),
+  extraLarge: scale(40),
 };
 
 export const COLORS = {
   background: '#072348',
-  white: '#D6D6DD',
-  orange: '#C24112',
+  white: '#FFFFFF',
+  orange: '#FA4D09',
   primary: '#00609C',
   black: '#000000',
-  danger: '#CD1D29',
+  danger: '#FF2626',
+  gray: '#707070',
 };

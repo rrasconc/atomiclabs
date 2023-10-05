@@ -7,6 +7,6 @@ export const globalStyles = StyleSheet.create({
     color: COLORS.orange,
   },
   label: {
-    fontWeight: '500',
+    fontWeight: '400',
   },
 });

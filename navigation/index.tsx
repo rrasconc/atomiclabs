@@ -1,5 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {
+  type NativeStackNavigationOptions,
+  createNativeStackNavigator,
+} from '@react-navigation/native-stack';
+import { StatusBar } from 'expo-status-bar';
 
 import { HeaderLogo } from '../components/Header.Logo';
 import { COLORS } from '../constants/theme';
@@ -8,17 +12,20 @@ import { SginUpScreen } from '../screens/SginUp.Screen';
 
 const Stack = createNativeStackNavigator();
 
-const screenOptions = {
+const screenOptions: NativeStackNavigationOptions = {
   headerStyle: {
     backgroundColor: COLORS.background,
   },
   headerShadowVisible: false,
   headerTitle: () => <HeaderLogo />,
+  headerTintColor: COLORS.white,
+  headerTitleAlign: 'center',
 };
 
 export function Navigation() {
   return (
     <NavigationContainer>
+      <StatusBar backgroundColor={COLORS.background} style="light" />
       <Stack.Navigator screenOptions={screenOptions}>
         <Stack.Screen name="Home" component={OnboardingScreen} />
         <Stack.Screen
