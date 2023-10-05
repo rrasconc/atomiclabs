@@ -24,4 +24,5 @@ export const COLORS = {
   orange: '#C24112',
   primary: '#00609C',
   black: '#000000',
+  danger: '#CD1D29',
 };

@@ -10,13 +10,14 @@ import { Services } from '../components/Services';
 import { Slogan } from '../components/Slogan';
 import { TeamMembers } from '../components/Team.Members';
 import { COLORS } from '../constants/theme';
+import { ScreenProps } from '../constants/types';
 import { useTeamMembers } from '../hooks/useTeamMembers';
 
 const astroSrc = require('../assets/Group4032.png');
 const astroRatio = 526 / 615; //used to maintain the original aspect ratio of the image.
 const { width } = Dimensions.get('window');
 
-export function OnboardingScreen() {
+export function OnboardingScreen({ navigation }: ScreenProps) {
   const teamMembers = useTeamMembers();
 
   const scrollRef = useRef<ScrollView>(null);
@@ -26,12 +27,16 @@ export function OnboardingScreen() {
     if (!servicesRef.current) {
       return;
     }
-    servicesRef.current.measure((y) => {
+    servicesRef.current.measure((_x, y) => {
       if (!scrollRef.current) {
         return;
       }
-      scrollRef.current.scrollTo({ y });
+      scrollRef.current.scrollTo({ y, animated: true });
     });
+  };
+
+  const handleSignInPress = () => {
+    navigation.navigate('SignUp');
   };
 
   return (
@@ -40,12 +45,12 @@ export function OnboardingScreen() {
       <ScrollDownButton onPress={handleScrollDownPress} text="Quiero saber más" />
 
       <Image style={styles.astroImg} resizeMode="contain" source={astroSrc} />
-      <SecondaryButton text="¡Quiero ser parte!" />
+      <SecondaryButton onPress={handleSignInPress} text="¡Quiero ser parte!" />
 
       <Services ref={servicesRef} />
 
       <HiringProcess />
-      <SecondaryButton text="¡Quiero ser parte!" />
+      <SecondaryButton onPress={handleSignInPress} text="¡Quiero ser parte!" />
 
       <TeamMembers data={teamMembers.data ?? []} loading={teamMembers.isLoading} />
 

@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HeaderLogo } from '../components/Header.Logo';
 import { COLORS } from '../constants/theme';
 import { OnboardingScreen } from '../screens/Onboarding.Screen';
+import { SginUpScreen } from '../screens/SginUp.Screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,13 @@ export function Navigation() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={screenOptions}>
         <Stack.Screen name="Home" component={OnboardingScreen} />
+        <Stack.Screen
+          options={{
+            presentation: 'modal',
+          }}
+          name="SignUp"
+          component={SginUpScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

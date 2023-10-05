@@ -1,13 +1,10 @@
-import { StyleSheet, TouchableOpacityProps, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import { Text } from './Text';
 import { BORDER_RADIUS, COLORS, SPACING } from '../constants/theme';
+import { ButtonProps } from '../constants/types';
 
-interface SecondaryButtonProps extends TouchableOpacityProps {
-  text: string;
-}
-
-export function SecondaryButton({ text, ...otherProps }: SecondaryButtonProps) {
+export function SecondaryButton({ text, ...otherProps }: ButtonProps) {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} {...otherProps}>
