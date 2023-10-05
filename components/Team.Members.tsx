@@ -1,26 +1,31 @@
-import { View, StyleSheet } from 'react-native';
-import { HeaderText } from './Header.Text';
-import { COLORS, SPACING } from '../constants/theme';
-import { TEAM_MEMBERS } from '../constants/content';
-import TeamMemberCard from './Team.Member.Card';
+import { View, StyleSheet, ActivityIndicator } from 'react-native';
 
-export function TeamMembers() {
+import { HeaderText } from './Header.Text';
+import { TeamMemberCard } from './Team.Member.Card';
+import { COLORS, SPACING } from '../constants/theme';
+import type { TeamMembersProps } from '../constants/types';
+
+export function TeamMembers({ data, loading }: TeamMembersProps) {
   return (
     <View style={styles.container}>
       <HeaderText>
         NUESTRO <HeaderText style={styles.highlightText}>EQUIPO</HeaderText>
       </HeaderText>
 
-      <View style={styles.cardsContainer}>
-        {TEAM_MEMBERS.map((item) => (
-          <TeamMemberCard
-            key={item.name}
-            name={item.name}
-            position={item.position}
-            image={item.image}
-          />
-        ))}
-      </View>
+      {loading && <ActivityIndicator color={COLORS.white} />}
+
+      {!loading && (
+        <View style={styles.cardsContainer}>
+          {data.map((item) => (
+            <TeamMemberCard
+              key={item.id}
+              name={item.name}
+              position={item.position}
+              avatar={item.avatar}
+            />
+          ))}
+        </View>
+      )}
     </View>
   );
 }

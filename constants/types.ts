@@ -1,5 +1,5 @@
-import { ImageSourcePropType } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { ImageSourcePropType, TouchableOpacityProps } from 'react-native';
 
 export interface ServiceGroup {
   title: string;
@@ -12,9 +12,17 @@ export interface ServiceGroupCardProps extends ServiceGroup {
 }
 
 export interface TeamMember {
-  image: ImageSourcePropType;
+  id: number;
+  avatar: string;
   name: string;
   position: string;
+}
+
+export type TeamMemberCardProps = Pick<TeamMember, 'avatar' | 'name' | 'position'>;
+
+export interface TeamMembersProps {
+  data: TeamMember[];
+  loading: boolean;
 }
 
 type FontawesomeIcon = keyof typeof FontAwesome.glyphMap;
@@ -22,4 +30,8 @@ type FontawesomeIcon = keyof typeof FontAwesome.glyphMap;
 export interface SocialMediaButtonProps {
   icon: FontawesomeIcon;
   url: string;
+}
+
+export interface ScrollDownButtonProps extends TouchableOpacityProps {
+  text: string;
 }

@@ -1,21 +1,24 @@
+import { useRef } from 'react';
 import { Dimensions, Image, ScrollView, StyleSheet, View } from 'react-native';
+
+import { Footer } from '../components/Footer';
 import { GallaxyScrollView } from '../components/Gallaxy.Scroll.View';
-import { COLORS } from '../constants/theme';
+import { HiringProcess } from '../components/Hiring.Process';
 import { ScrollDownButton } from '../components/Scroll.Down.Button';
 import { SecondaryButton } from '../components/Secondary.Button';
+import { Services } from '../components/Services';
 import { Slogan } from '../components/Slogan';
 import { TeamMembers } from '../components/Team.Members';
-import { Footer } from '../components/Footer';
-import { Services } from '../components/Services';
-import { HiringProcess } from '../components/Hiring.Process';
-import { useRef } from 'react';
+import { COLORS } from '../constants/theme';
+import { useTeamMembers } from '../hooks/useTeamMembers';
 
 const astroSrc = require('../assets/Group4032.png');
 const astroRatio = 526 / 615; //used to maintain the original aspect ratio of the image.
-
 const { width } = Dimensions.get('window');
 
 export function OnboardingScreen() {
+  const teamMembers = useTeamMembers();
+
   const scrollRef = useRef<ScrollView>(null);
   const servicesRef = useRef<View>(null);
 
@@ -27,7 +30,7 @@ export function OnboardingScreen() {
       if (!scrollRef.current) {
         return;
       }
-      scrollRef.current.scrollTo({ y: y });
+      scrollRef.current.scrollTo({ y });
     });
   };
 
@@ -44,7 +47,7 @@ export function OnboardingScreen() {
       <HiringProcess />
       <SecondaryButton text="¡Quiero ser parte!" />
 
-      <TeamMembers />
+      <TeamMembers data={teamMembers.data ?? []} loading={teamMembers.isLoading} />
 
       <Footer />
     </GallaxyScrollView>

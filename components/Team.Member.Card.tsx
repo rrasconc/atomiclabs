@@ -1,13 +1,14 @@
 import { View, StyleSheet, Image } from 'react-native';
-import { BORDER_RADIUS, COLORS, FONT, SPACING } from '../constants/theme';
-import type { TeamMember } from '../constants/types';
-import { Text } from './Text';
 import { scale } from 'react-native-size-matters';
 
-export default function TeamMemberCard({ image, name, position }: TeamMember) {
+import { Text } from './Text';
+import { BORDER_RADIUS, COLORS, FONT, SPACING } from '../constants/theme';
+import type { TeamMemberCardProps } from '../constants/types';
+
+export function TeamMemberCard({ avatar, name, position }: TeamMemberCardProps) {
   return (
     <View style={styles.container}>
-      <Image style={styles.img} source={image} />
+      <Image style={styles.img} source={{ uri: avatar }} />
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.position}>{position}</Text>
     </View>
