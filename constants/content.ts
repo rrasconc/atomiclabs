@@ -1,4 +1,4 @@
-import type { ServiceGroup, TeamMember } from './types';
+import type { ServiceGroup } from './types';
 
 const conquistaImg = require('../assets/conquista.png');
 const exploraImg = require('../assets/explora.png');

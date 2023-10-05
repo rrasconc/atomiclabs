@@ -52,7 +52,11 @@ export function OnboardingScreen({ navigation }: ScreenProps) {
       <HiringProcess />
       <SecondaryButton onPress={handleSignInPress} text="¡Quiero ser parte!" />
 
-      <TeamMembers data={teamMembers.data ?? []} loading={teamMembers.isLoading} />
+      <TeamMembers
+        error={teamMembers.error}
+        data={teamMembers.data ?? []}
+        loading={teamMembers.isLoading}
+      />
 
       <Footer />
     </GallaxyScrollView>

@@ -30,6 +30,7 @@ export type TeamMemberCardProps = Pick<TeamMember, 'avatar' | 'name' | 'position
 export interface TeamMembersProps {
   data: TeamMember[];
   loading: boolean;
+  error: any;
 }
 
 type FontawesomeIcon = keyof typeof FontAwesome.glyphMap;
