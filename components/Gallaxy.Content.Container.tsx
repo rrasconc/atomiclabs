@@ -5,7 +5,12 @@ import { FOOTER_HEIGHT, SPACING } from '../constants/theme';
 export function GallaxyContentContainer({ ...viewProps }: ViewProps) {
   const headerHeight = useHeaderHeight();
 
-  return <View {...viewProps} style={[styles.container, { paddingTop: headerHeight }]} />;
+  return (
+    <View
+      {...viewProps}
+      style={[styles.container, { paddingTop: headerHeight + SPACING.medium }]}
+    />
+  );
 }
 
 const styles = StyleSheet.create({

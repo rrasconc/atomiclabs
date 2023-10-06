@@ -36,7 +36,12 @@ export const GallaxyScrollView = forwardRef(function GallaxyScrollView(
   };
 
   return (
-    <ScrollView onScroll={handleScroll} {...otherProps} ref={ref} style={styles.container}>
+    <ScrollView
+      scrollEventThrottle={32}
+      onScroll={handleScroll}
+      {...otherProps}
+      ref={ref}
+      style={styles.container}>
       <View style={styles.bgContainer}>{renderBgImages()}</View>
       {children}
     </ScrollView>

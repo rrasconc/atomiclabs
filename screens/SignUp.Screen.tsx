@@ -37,6 +37,7 @@ export function SignUpScreen() {
     try {
       //display success screen
       await api.post('/form', values);
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
       setCurrentStep({ ...currentStep, step: 0 });
     } catch {
       /*this alert should be replaced with a prettier component and have different content
