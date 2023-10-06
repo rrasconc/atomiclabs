@@ -3,7 +3,7 @@ import { verticalScale, scale } from 'react-native-size-matters';
 
 import { HeaderText } from './Header.Text';
 import { Text } from './Text';
-import { BORDER_RADIUS, COLORS, SPACING } from '../constants/theme';
+import { BORDER_RADIUS, COLORS, FONT, SPACING } from '../constants/theme';
 import type { ServiceGroupCardProps } from '../constants/types';
 
 export function ServiceGroupCard({ title, services, image, width }: ServiceGroupCardProps) {
@@ -18,7 +18,7 @@ export function ServiceGroupCard({ title, services, image, width }: ServiceGroup
           {services.map((service) => (
             <View key={service} style={styles.serviceContainer}>
               <View style={styles.bulletPoint} />
-              <Text>{service}</Text>
+              <Text style={styles.text}>{service}</Text>
             </View>
           ))}
         </View>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.orange,
     borderRadius: BORDER_RADIUS,
     height: verticalScale(400),
-    gap: SPACING.medium,
+    gap: SPACING.extraSmall,
     flex: 1,
   },
   title: {
@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   img: {
-    height: scale(180),
-    width: scale(180),
+    height: scale(170),
+    width: scale(170),
   },
   separator: {
     height: verticalScale(3),
@@ -72,5 +72,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     width: scale(140),
     alignSelf: 'center',
+  },
+  text: {
+    fontSize: FONT.small,
   },
 });
