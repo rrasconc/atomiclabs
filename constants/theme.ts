@@ -19,7 +19,7 @@ export const FONT = {
 };
 
 export const COLORS = {
-  background: '#072348',
+  background: '#051932',
   white: '#FFFFFF',
   orange: '#FA4D09',
   primary: '#00609C',

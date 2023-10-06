@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { Dimensions, Image, ScrollView, StyleSheet, View } from 'react-native';
 
 import { Footer } from '../components/Footer';
+import { GallaxyContentContainer } from '../components/Gallaxy.Content.Container';
 import { GallaxyScrollView } from '../components/Gallaxy.Scroll.View';
 import { HiringProcess } from '../components/Hiring.Process';
 import { ScrollDownButton } from '../components/Scroll.Down.Button';
@@ -9,12 +10,12 @@ import { SecondaryButton } from '../components/Secondary.Button';
 import { Services } from '../components/Services';
 import { Slogan } from '../components/Slogan';
 import { TeamMembers } from '../components/Team.Members';
+import { ASTRO1_IMG_RATIO, IMAGES } from '../constants/files';
+import { globalStyles } from '../constants/styles';
 import { COLORS } from '../constants/theme';
 import { ScreenProps } from '../constants/types';
 import { useTeamMembers } from '../hooks/useTeamMembers';
 
-const astroSrc = require('../assets/Group4032.png');
-const astroRatio = 526 / 615; //used to maintain the original aspect ratio of the image.
 const { width } = Dimensions.get('window');
 
 export function OnboardingScreen({ navigation }: ScreenProps) {
@@ -39,26 +40,36 @@ export function OnboardingScreen({ navigation }: ScreenProps) {
     navigation.navigate('SignUp');
   };
 
+  const renderBgImages = () => (
+    <>
+      <Image source={IMAGES.gallaxy} />
+      <Image source={IMAGES.smallBubbles} />
+      <Image source={IMAGES.bubbles} />
+      <Image style={globalStyles.bottomBg} source={IMAGES.smallGallaxy} />
+    </>
+  );
+
   return (
-    <GallaxyScrollView ref={scrollRef}>
-      <Slogan />
-      <ScrollDownButton onPress={handleScrollDownPress} text="Quiero saber más" />
+    <GallaxyScrollView renderBgImages={renderBgImages} ref={scrollRef}>
+      <GallaxyContentContainer>
+        <Slogan />
+        <ScrollDownButton onPress={handleScrollDownPress} text="Quiero saber más" />
+        <Image style={styles.astroImg} resizeMode="contain" source={IMAGES.astro1} />
+        <SecondaryButton onPress={handleSignInPress} text="¡Quiero ser parte!" />
 
-      <Image style={styles.astroImg} resizeMode="contain" source={astroSrc} />
-      <SecondaryButton onPress={handleSignInPress} text="¡Quiero ser parte!" />
+        <Services ref={servicesRef} />
 
-      <Services ref={servicesRef} />
+        <HiringProcess />
+        <SecondaryButton onPress={handleSignInPress} text="¡Quiero ser parte!" />
 
-      <HiringProcess />
-      <SecondaryButton onPress={handleSignInPress} text="¡Quiero ser parte!" />
+        <TeamMembers
+          error={teamMembers.error}
+          data={teamMembers.data ?? []}
+          loading={teamMembers.isLoading}
+        />
 
-      <TeamMembers
-        error={teamMembers.error}
-        data={teamMembers.data ?? []}
-        loading={teamMembers.isLoading}
-      />
-
-      <Footer />
+        <Footer />
+      </GallaxyContentContainer>
     </GallaxyScrollView>
   );
 }
@@ -70,6 +81,6 @@ const styles = StyleSheet.create({
   astroImg: {
     alignSelf: 'center',
     width: '100%',
-    height: width * astroRatio,
+    height: width * ASTRO1_IMG_RATIO,
   },
 });

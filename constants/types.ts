@@ -6,6 +6,7 @@ import type {
   ImageSourcePropType,
   TextInputProps as DefaultTextInputProps,
   TouchableOpacityProps,
+  ScrollViewProps,
 } from 'react-native';
 
 export interface ServiceGroup {
@@ -96,4 +97,8 @@ export interface PhoneFormProps
     Pick<FormikHandlers, 'handleSubmit' | 'handleChange'> {
   errors: FormikErrors<SignUpFormValues>;
   values: SignUpFormValues;
+}
+
+export interface GallaxyScrollViewProps extends ScrollViewProps {
+  renderBgImages: () => ReactNode;
 }

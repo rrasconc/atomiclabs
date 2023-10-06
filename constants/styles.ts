@@ -9,4 +9,7 @@ export const globalStyles = StyleSheet.create({
   label: {
     fontWeight: '400',
   },
+  bottomBg: {
+    marginTop: 'auto',
+  },
 });

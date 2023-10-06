@@ -1,10 +1,10 @@
 import { StyleSheet, Image } from 'react-native';
 import { scale, verticalScale } from 'react-native-size-matters';
 
-const logoImgSrc = require('../assets/logo.png');
+import { IMAGES } from '../constants/files';
 
 export function HeaderLogo() {
-  return <Image style={styles.logo} source={logoImgSrc} />;
+  return <Image style={styles.logo} source={IMAGES.logo} />;
 }
 
 const styles = StyleSheet.create({

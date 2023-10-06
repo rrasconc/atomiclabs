@@ -1,8 +1,9 @@
 import { useFormik } from 'formik';
 import { useState } from 'react';
-import { Alert, Image, StyleSheet, View } from 'react-native';
+import { Alert, Image, LayoutAnimation, StyleSheet, View } from 'react-native';
 
 import { Footer } from '../components/Footer';
+import { GallaxyContentContainer } from '../components/Gallaxy.Content.Container';
 import { GallaxyScrollView } from '../components/Gallaxy.Scroll.View';
 import { HeaderText } from '../components/Header.Text';
 import { NameForm } from '../components/Name.Form';
@@ -11,6 +12,7 @@ import { StepDot } from '../components/Step.Dot';
 import { Stepper } from '../components/Stepper';
 import { Text } from '../components/Text';
 import { api } from '../constants/api';
+import { IMAGES } from '../constants/files';
 import { globalStyles } from '../constants/styles';
 import { SPACING } from '../constants/theme';
 import type { SignUpFormValues, StepStatus } from '../constants/types';
@@ -21,8 +23,6 @@ const initialValues = {
   lastname: '',
   phoneNumber: '',
 };
-const astro2Img = require('../assets/astro2.png');
-const astro3Img = require('../assets/astro3.png');
 
 export function SginUpScreen() {
   const [currentStep, setCurrentStep] = useState<{ step: number; status: StepStatus }>({
@@ -54,6 +54,8 @@ export function SginUpScreen() {
     //fake delay to cause a better UX
     setTimeout(() => {
       setLoading(false);
+
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
       setCurrentStep({
         step: 2,
         status: 'inProgress',
@@ -67,81 +69,90 @@ export function SginUpScreen() {
     validationSchema: signUpSchema,
   });
 
+  const renderBgImages = () => (
+    <>
+      <Image source={IMAGES.gallaxy2} />
+      <Image source={IMAGES.gallaxy3} />
+    </>
+  );
+
   return (
-    <GallaxyScrollView>
-      {currentStep.step !== 0 && (
-        <Stepper progress={currentStep.step === 1 ? 0.35 : 1}>
-          <StepDot number={1} status={currentStep.step === 1 ? 'inProgress' : 'completed'} />
-          <StepDot number={2} status={currentStep.step === 1 ? 'pending' : 'inProgress'} />
-        </Stepper>
-      )}
+    <GallaxyScrollView renderBgImages={renderBgImages}>
+      <GallaxyContentContainer>
+        {currentStep.step !== 0 && (
+          <Stepper progress={currentStep.step === 1 ? 0.35 : 1}>
+            <StepDot number={1} status={currentStep.step === 1 ? 'inProgress' : 'completed'} />
+            <StepDot number={2} status={currentStep.step === 1 ? 'pending' : 'inProgress'} />
+          </Stepper>
+        )}
 
-      {currentStep.step === 1 && (
-        <>
-          <View style={styles.titleContainer}>
-            <StepDot number={1} status="inProgress" size="large" />
-            <HeaderText style={styles.title} adjustsFontSizeToFit={false} numberOfLines={2}>
-              TE QUEREMOS <HeaderText style={globalStyles.highlightText}>CONOCER</HeaderText>
-            </HeaderText>
-          </View>
+        {currentStep.step === 1 && (
+          <>
+            <View style={styles.titleContainer}>
+              <StepDot number={1} status="inProgress" size="large" />
+              <HeaderText style={styles.title} adjustsFontSizeToFit={false} numberOfLines={2}>
+                TE QUEREMOS <HeaderText style={globalStyles.highlightText}>CONOCER</HeaderText>
+              </HeaderText>
+            </View>
 
-          <NameForm
-            values={values}
-            errors={errors}
-            handleChange={handleChange}
-            handleSubmit={handleNameSubmit}
-            loading={loading}
-          />
-        </>
-      )}
+            <NameForm
+              values={values}
+              errors={errors}
+              handleChange={handleChange}
+              handleSubmit={handleNameSubmit}
+              loading={loading}
+            />
+          </>
+        )}
 
-      {currentStep.step === 2 && (
-        <>
-          <View style={styles.titleContainer}>
-            <StepDot number={2} status="inProgress" size="large" />
-            <HeaderText style={styles.title} adjustsFontSizeToFit={false} numberOfLines={2}>
-              VALIDA TU{'\n'}
-              <HeaderText style={globalStyles.highlightText}>CELULAR</HeaderText>
-            </HeaderText>
-          </View>
+        {currentStep.step === 2 && (
+          <>
+            <View style={styles.titleContainer}>
+              <StepDot number={2} status="inProgress" size="large" />
+              <HeaderText style={styles.title} adjustsFontSizeToFit={false} numberOfLines={2}>
+                VALIDA TU{'\n'}
+                <HeaderText style={[globalStyles.highlightText, styles.title]}>CELULAR</HeaderText>
+              </HeaderText>
+            </View>
 
-          <PhoneForm
-            values={values}
-            errors={errors}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            loading={loading}
-          />
-        </>
-      )}
+            <PhoneForm
+              values={values}
+              errors={errors}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              loading={loading}
+            />
+          </>
+        )}
 
-      {currentStep.step === 0 && (
-        <>
-          <View>
-            <HeaderText>TUS DATOS</HeaderText>
-            <HeaderText>
-              HAN SIDO <HeaderText style={globalStyles.highlightText}>ENVIADOS</HeaderText>
-            </HeaderText>
-            <HeaderText style={globalStyles.highlightText}>CON ÉXITO</HeaderText>
-          </View>
+        {currentStep.step === 0 && (
+          <>
+            <View>
+              <HeaderText>TUS DATOS</HeaderText>
+              <HeaderText>
+                HAN SIDO <HeaderText style={globalStyles.highlightText}>ENVIADOS</HeaderText>
+              </HeaderText>
+              <HeaderText style={globalStyles.highlightText}>CON ÉXITO</HeaderText>
+            </View>
 
-          <Text style={globalStyles.label}>
-            En breve recibirás un correo de confirmación por parte del equipo de AtomicLabs
-          </Text>
-          <Text style={globalStyles.label}>
-            Recuerda revisar tu bandeja de SPAM ¡Esperamos verte pronto!
-          </Text>
-        </>
-      )}
+            <Text style={globalStyles.label}>
+              En breve recibirás un correo de confirmación por parte del equipo de AtomicLabs
+            </Text>
+            <Text style={globalStyles.label}>
+              Recuerda revisar tu bandeja de SPAM ¡Esperamos verte pronto!
+            </Text>
+          </>
+        )}
 
-      {currentStep.step === 1 && (
-        <Image resizeMode="contain" style={styles.img} source={astro3Img} />
-      )}
-      {currentStep.step === 0 && (
-        <Image resizeMode="contain" style={styles.img} source={astro2Img} />
-      )}
+        {currentStep.step !== 0 && (
+          <Image resizeMode="contain" style={styles.img} source={IMAGES.astro3} />
+        )}
+        {currentStep.step === 0 && (
+          <Image resizeMode="contain" style={styles.img} source={IMAGES.astro2} />
+        )}
 
-      <Footer />
+        <Footer />
+      </GallaxyContentContainer>
     </GallaxyScrollView>
   );
 }

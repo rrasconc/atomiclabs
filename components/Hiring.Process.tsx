@@ -1,10 +1,8 @@
 import { View, StyleSheet, Dimensions, Image } from 'react-native';
 
 import { HeaderText } from './Header.Text';
+import { IMAGES, PEOPLE_IMG_RATIO } from '../constants/files';
 import { COLORS, SPACING } from '../constants/theme';
-
-const peopleSrc = require('../assets/people.png');
-const peopleRatio = 416 / 1209;
 
 const { width } = Dimensions.get('window');
 
@@ -17,7 +15,7 @@ export function HiringProcess() {
         <HeaderText style={styles.highlightText}>NOSOTROS!</HeaderText>
       </View>
 
-      <Image resizeMode="contain" style={styles.peopleImg} source={peopleSrc} />
+      <Image resizeMode="contain" style={styles.peopleImg} source={IMAGES.people} />
     </View>
   );
 }
@@ -30,7 +28,7 @@ const styles = StyleSheet.create({
   peopleImg: {
     alignSelf: 'center',
     width: '100%',
-    height: width * peopleRatio,
+    height: width * PEOPLE_IMG_RATIO,
   },
   highlightText: {
     color: COLORS.orange,
