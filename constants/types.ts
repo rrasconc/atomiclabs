@@ -104,3 +104,11 @@ export interface PhoneFormProps
 export interface GallaxyScrollViewProps extends ScrollViewProps {
   renderBgImages: () => ReactNode;
 }
+
+export interface ServicesProps {
+  data: ServiceGroup[];
+}
+
+export interface ServiceCarouselProps {
+  data: ServiceGroup[];
+}

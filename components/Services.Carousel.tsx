@@ -10,13 +10,12 @@ import {
 import { scale } from 'react-native-size-matters';
 
 import { ServiceGroupCard } from './Service.Group.Card';
-import { SERVICE_GROUPS } from '../constants/content';
 import { COLORS, SPACING } from '../constants/theme';
-import type { ServiceGroup } from '../constants/types';
+import type { ServiceCarouselProps, ServiceGroup } from '../constants/types';
 
 const { width } = Dimensions.get('window');
 
-export function ServicesCarousel() {
+export function ServicesCarousel({ data }: ServiceCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const renderItem = ({ item }: { item: ServiceGroup }) => (
@@ -44,13 +43,13 @@ export function ServicesCarousel() {
         contentContainerStyle={styles.contentContainer}
         horizontal
         showsHorizontalScrollIndicator={false}
-        data={SERVICE_GROUPS}
+        data={data}
         renderItem={renderItem}
         pagingEnabled
         onMomentumScrollEnd={handleMomentumScrollEnd}
       />
       <View style={styles.paginationContainer}>
-        {SERVICE_GROUPS.map((item, index) => (
+        {data.map((item, index) => (
           <View
             key={item.title}
             style={[styles.page, index === currentIndex && { backgroundColor: COLORS.orange }]}

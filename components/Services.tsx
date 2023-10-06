@@ -4,8 +4,12 @@ import { View, StyleSheet } from 'react-native';
 import { HeaderText } from './Header.Text';
 import { ServicesCarousel } from './Services.Carousel';
 import { COLORS, SPACING } from '../constants/theme';
+import { ServicesProps } from '../constants/types';
 
-export const Services = forwardRef(function Services(_props, ref: LegacyRef<View>) {
+export const Services = forwardRef(function Services(
+  { data }: ServicesProps,
+  ref: LegacyRef<View>
+) {
   return (
     <View ref={ref} style={styles.container}>
       <View>
@@ -16,7 +20,7 @@ export const Services = forwardRef(function Services(_props, ref: LegacyRef<View
         <HeaderText style={styles.highlightText}>TECNOLOGÍA</HeaderText>
       </View>
 
-      <ServicesCarousel />
+      <ServicesCarousel data={data} />
     </View>
   );
 });

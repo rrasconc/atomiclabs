@@ -10,6 +10,7 @@ import { SecondaryButton } from '../components/Secondary.Button';
 import { Services } from '../components/Services';
 import { Slogan } from '../components/Slogan';
 import { TeamMembers } from '../components/Team.Members';
+import { SERVICE_GROUPS } from '../constants/content';
 import { ASTRO1_IMG_RATIO, IMAGES } from '../constants/files';
 import { globalStyles } from '../constants/styles';
 import { COLORS } from '../constants/theme';
@@ -57,7 +58,7 @@ export function OnboardingScreen({ navigation }: ScreenProps) {
         <Image style={styles.astroImg} resizeMode="contain" source={IMAGES.astro1} />
         <SecondaryButton onPress={handleSignInPress} text="¡Quiero ser parte!" />
 
-        <Services ref={servicesRef} />
+        <Services data={SERVICE_GROUPS} ref={servicesRef} />
 
         <HiringProcess />
         <SecondaryButton onPress={handleSignInPress} text="¡Quiero ser parte!" />
