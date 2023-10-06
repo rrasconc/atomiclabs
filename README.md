@@ -27,6 +27,12 @@ Necesitas seguir los siguientes pasos para la instalación del proyecto:
    yarn install
 ```
 
+3. Agregar archivo `.env` en el folder raíz con la siguiente variable de entorno:
+
+```bash
+   EXPO_PUBLIC_API_URL=https://atomic-test-api.onrender.com
+```
+
 ## Uso
 
 Para correr el proyecto solo hace falta usar el siguiente comando:

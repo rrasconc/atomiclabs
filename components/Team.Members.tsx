@@ -30,7 +30,7 @@ export function TeamMembers({ data, loading, error }: TeamMembersProps) {
 
       {error && (
         <Text style={styles.errorMessage}>
-          No pudimos mostrar al equipo ahora. Pero puedes volver más tarde
+          No podemos mostrar al equipo ahora, pero puedes volver más tarde
         </Text>
       )}
     </View>
