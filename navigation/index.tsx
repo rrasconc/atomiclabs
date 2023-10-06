@@ -14,12 +14,13 @@ const Stack = createNativeStackNavigator();
 
 const screenOptions: NativeStackNavigationOptions = {
   headerStyle: {
-    backgroundColor: COLORS.background,
+    backgroundColor: 'transparent',
   },
   headerShadowVisible: false,
   headerTitle: () => <HeaderLogo />,
   headerTintColor: COLORS.white,
   headerTitleAlign: 'center',
+  headerTransparent: true,
 };
 
 export function Navigation() {

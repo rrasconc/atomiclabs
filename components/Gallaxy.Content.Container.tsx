@@ -1,9 +1,11 @@
+import { useHeaderHeight } from '@react-navigation/elements';
 import { View, StyleSheet, ViewProps } from 'react-native';
 
 import { FOOTER_HEIGHT, SPACING } from '../constants/theme';
-
 export function GallaxyContentContainer({ ...viewProps }: ViewProps) {
-  return <View {...viewProps} style={styles.container} />;
+  const headerHeight = useHeaderHeight();
+
+  return <View {...viewProps} style={[styles.container, { paddingTop: headerHeight }]} />;
 }
 
 const styles = StyleSheet.create({
