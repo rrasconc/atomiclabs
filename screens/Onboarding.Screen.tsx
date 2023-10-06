@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Dimensions, Image, ScrollView, StyleSheet, View } from 'react-native';
+import { Dimensions, Image, LayoutChangeEvent, ScrollView, StyleSheet, View } from 'react-native';
 
 import { Footer } from '../components/Footer';
 import { GallaxyContentContainer } from '../components/Gallaxy.Content.Container';
@@ -22,6 +22,7 @@ const { width } = Dimensions.get('window');
 export function OnboardingScreen({ navigation }: ScreenProps) {
   const teamMembers = useTeamMembers();
 
+  const positionRef = useRef(0);
   const scrollRef = useRef<ScrollView>(null);
   const servicesRef = useRef<View>(null);
 
@@ -29,12 +30,10 @@ export function OnboardingScreen({ navigation }: ScreenProps) {
     if (!servicesRef.current) {
       return;
     }
-    servicesRef.current.measure((_x, y) => {
-      if (!scrollRef.current) {
-        return;
-      }
-      scrollRef.current.scrollTo({ y, animated: true });
-    });
+    if (!scrollRef.current) {
+      return;
+    }
+    return scrollRef.current.scrollTo({ y: positionRef.current, animated: true });
   };
 
   const handleSignInPress = () => {
@@ -50,6 +49,14 @@ export function OnboardingScreen({ navigation }: ScreenProps) {
     </>
   );
 
+  const onLayout = ({
+    nativeEvent: {
+      layout: { y },
+    },
+  }: LayoutChangeEvent) => {
+    positionRef.current = y;
+  };
+
   return (
     <GallaxyScrollView renderBgImages={renderBgImages} ref={scrollRef}>
       <GallaxyContentContainer>
@@ -58,7 +65,7 @@ export function OnboardingScreen({ navigation }: ScreenProps) {
         <Image style={styles.astroImg} resizeMode="contain" source={IMAGES.astro1} />
         <SecondaryButton onPress={handleSignInPress} text="¡Quiero ser parte!" />
 
-        <Services data={SERVICE_GROUPS} ref={servicesRef} />
+        <Services onLayout={onLayout} data={SERVICE_GROUPS} ref={servicesRef} />
 
         <HiringProcess />
         <SecondaryButton onPress={handleSignInPress} text="¡Quiero ser parte!" />

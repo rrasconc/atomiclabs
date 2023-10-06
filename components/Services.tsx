@@ -7,11 +7,11 @@ import { COLORS, SPACING } from '../constants/theme';
 import { ServicesProps } from '../constants/types';
 
 export const Services = forwardRef(function Services(
-  { data }: ServicesProps,
+  { data, onLayout }: ServicesProps,
   ref: LegacyRef<View>
 ) {
   return (
-    <View ref={ref} style={styles.container}>
+    <View collapsable={false} onLayout={onLayout} ref={ref} style={styles.container}>
       <View>
         <HeaderText>SOMOS EL BRAZO</HeaderText>
         <HeaderText>

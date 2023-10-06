@@ -8,6 +8,7 @@ import type {
   TouchableOpacityProps,
   ScrollViewProps,
   ColorValue,
+  LayoutChangeEvent,
 } from 'react-native';
 
 export interface ServiceGroup {
@@ -107,6 +108,7 @@ export interface GallaxyScrollViewProps extends ScrollViewProps {
 
 export interface ServicesProps {
   data: ServiceGroup[];
+  onLayout: (e: LayoutChangeEvent) => void;
 }
 
 export interface ServiceCarouselProps {
