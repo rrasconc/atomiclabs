@@ -15,14 +15,13 @@ import { COLORS, SPACING } from '../constants/theme';
 import type { ServiceGroup } from '../constants/types';
 
 const { width } = Dimensions.get('window');
-const cardWidth = width - SPACING.medium * 2;
 
 export function ServicesCarousel() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const renderItem = ({ item }: { item: ServiceGroup }) => (
     <ServiceGroupCard
-      width={cardWidth}
+      width={width}
       image={item.image}
       title={item.title}
       services={item.services}
@@ -41,6 +40,7 @@ export function ServicesCarousel() {
     <View style={styles.container}>
       <FlatList
         keyExtractor={(item) => item.title}
+        style={styles.carousel}
         contentContainerStyle={styles.contentContainer}
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -65,8 +65,11 @@ const styles = StyleSheet.create({
   container: {
     gap: SPACING.large,
   },
+  carousel: {
+    marginHorizontal: -SPACING.medium,
+  },
   contentContainer: {
-    gap: SPACING.medium,
+    justifyContent: 'center',
   },
   paginationContainer: {
     flexDirection: 'row',

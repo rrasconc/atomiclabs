@@ -8,26 +8,30 @@ import type { ServiceGroupCardProps } from '../constants/types';
 
 export function ServiceGroupCard({ title, services, image, width }: ServiceGroupCardProps) {
   return (
-    <View style={[styles.cardContainer, { width }]}>
-      <Image resizeMode="cover" style={styles.img} source={image} />
+    <View style={[styles.container, { width }]}>
+      <View style={styles.card}>
+        <Image resizeMode="cover" style={styles.img} source={image} />
+        <View style={styles.servicesContainer}>
+          <View style={styles.separator} />
+          <HeaderText style={styles.title}>{title}</HeaderText>
 
-      <View style={styles.servicesContainer}>
-        <View style={styles.separator} />
-        <HeaderText style={styles.title}>{title}</HeaderText>
-
-        {services.map((service) => (
-          <View key={service} style={styles.serviceContainer}>
-            <View style={styles.bulletPoint} />
-            <Text>{service}</Text>
-          </View>
-        ))}
+          {services.map((service) => (
+            <View key={service} style={styles.serviceContainer}>
+              <View style={styles.bulletPoint} />
+              <Text>{service}</Text>
+            </View>
+          ))}
+        </View>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  cardContainer: {
+  container: {
+    paddingHorizontal: SPACING.medium,
+  },
+  card: {
     paddingVertical: SPACING.medium,
     paddingHorizontal: SPACING.large,
     alignItems: 'center',
@@ -35,6 +39,7 @@ const styles = StyleSheet.create({
     borderRadius: BORDER_RADIUS,
     height: verticalScale(400),
     gap: SPACING.medium,
+    flex: 1,
   },
   title: {
     textShadowColor: 'rgba(0, 0, 0, 0.6)',
