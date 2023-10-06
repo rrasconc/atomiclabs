@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextInput /> renders correctly 1`] = `
+<View
+  style={
+    {
+      "gap": 21.428571428571427,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontSize": 38.57142857142857,
+        },
+        {
+          "fontWeight": "400",
+        },
+      ]
+    }
+  >
+    Name
+  </Text>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 5,
+          "borderWidth": 1.5,
+          "flexDirection": "row",
+          "paddingHorizontal": 32.14285714285714,
+        },
+        {
+          "borderColor": "#FF2626",
+        },
+      ]
+    }
+  >
+    <TextInput
+      style={
+        {
+          "flex": 1,
+          "fontSize": 38.57142857142857,
+        }
+      }
+    />
+    <View
+      style={
+        {
+          "backgroundColor": "#FFFFFF",
+          "marginLeft": "auto",
+          "padding": 21.428571428571427,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        selectable={false}
+        style={
+          [
+            {
+              "color": "#707070",
+              "fontSize": 38.57142857142857,
+            },
+            undefined,
+            {
+              "fontFamily": "FontAwesome",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontSize": 38.57142857142857,
+        },
+        {
+          "color": "#FF2626",
+          "fontSize": 30,
+          "fontWeight": "700",
+          "marginTop": -10.714285714285714,
+        },
+      ]
+    }
+  >
+    There is an error!
+  </Text>
+</View>
+`;

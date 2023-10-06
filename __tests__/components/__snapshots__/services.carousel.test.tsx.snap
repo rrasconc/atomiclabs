@@ -1,0 +1,754 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ServicesCarousel /> renders correctly 1`] = `
+<View
+  style={
+    {
+      "gap": 42.857142857142854,
+    }
+  }
+>
+  <RCTScrollView
+    contentContainerStyle={
+      {
+        "justifyContent": "center",
+      }
+    }
+    data={
+      [
+        {
+          "image": 1,
+          "services": [
+            "Estrategia Digital",
+            "Big Data & Analysis",
+            "Consultoría Tecnológica",
+            "Reducción de costos TI",
+          ],
+          "title": "IMAGINA",
+        },
+        {
+          "image": 1,
+          "services": [
+            "Innovación y creación tecnológica",
+            "UI/UX",
+            "Innovación",
+          ],
+          "title": "EXPLORA",
+        },
+        {
+          "image": 1,
+          "services": [
+            "Desarrollo tecnológico y creación tecnológica",
+            "Ciberseguridad",
+            "Servicios de la Nube",
+          ],
+          "title": "CONQUISTA",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={true}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    pagingEnabled={true}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    showsHorizontalScrollIndicator={false}
+    stickyHeaderIndices={[]}
+    style={
+      {
+        "marginHorizontal": -32.14285714285714,
+      }
+    }
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "paddingHorizontal": 32.14285714285714,
+              },
+              {
+                "width": 750,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#FA4D09",
+                "borderRadius": 10,
+                "flex": 1,
+                "gap": 32.14285714285714,
+                "height": 784.7058823529411,
+                "paddingHorizontal": 42.857142857142854,
+                "paddingVertical": 32.14285714285714,
+              }
+            }
+          >
+            <Image
+              resizeMode="cover"
+              source={1}
+              style={
+                {
+                  "height": 385.7142857142857,
+                  "width": 385.7142857142857,
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "gap": 21.428571428571427,
+                  "paddingHorizontal": 42.857142857142854,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "alignSelf": "center",
+                    "backgroundColor": "#FFFFFF",
+                    "borderRadius": 10,
+                    "height": 5.885294117647058,
+                    "width": 300,
+                  }
+                }
+              />
+              <Text
+                adjustsFontSizeToFit={true}
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "fontSize": 68.57142857142857,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                    {
+                      "textShadowColor": "rgba(0, 0, 0, 0.6)",
+                      "textShadowOffset": {
+                        "height": 1,
+                        "width": -1,
+                      },
+                      "textShadowRadius": 10,
+                    },
+                  ]
+                }
+              >
+                IMAGINA
+              </Text>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 21.428571428571427,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "backgroundColor": "#FFFFFF",
+                      "borderRadius": 50,
+                      "height": 17.142857142857142,
+                      "width": 17.142857142857142,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "fontSize": 38.57142857142857,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  Estrategia Digital
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 21.428571428571427,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "backgroundColor": "#FFFFFF",
+                      "borderRadius": 50,
+                      "height": 17.142857142857142,
+                      "width": 17.142857142857142,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "fontSize": 38.57142857142857,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  Big Data & Analysis
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 21.428571428571427,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "backgroundColor": "#FFFFFF",
+                      "borderRadius": 50,
+                      "height": 17.142857142857142,
+                      "width": 17.142857142857142,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "fontSize": 38.57142857142857,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  Consultoría Tecnológica
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 21.428571428571427,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "backgroundColor": "#FFFFFF",
+                      "borderRadius": 50,
+                      "height": 17.142857142857142,
+                      "width": 17.142857142857142,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "fontSize": 38.57142857142857,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  Reducción de costos TI
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "paddingHorizontal": 32.14285714285714,
+              },
+              {
+                "width": 750,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#FA4D09",
+                "borderRadius": 10,
+                "flex": 1,
+                "gap": 32.14285714285714,
+                "height": 784.7058823529411,
+                "paddingHorizontal": 42.857142857142854,
+                "paddingVertical": 32.14285714285714,
+              }
+            }
+          >
+            <Image
+              resizeMode="cover"
+              source={1}
+              style={
+                {
+                  "height": 385.7142857142857,
+                  "width": 385.7142857142857,
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "gap": 21.428571428571427,
+                  "paddingHorizontal": 42.857142857142854,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "alignSelf": "center",
+                    "backgroundColor": "#FFFFFF",
+                    "borderRadius": 10,
+                    "height": 5.885294117647058,
+                    "width": 300,
+                  }
+                }
+              />
+              <Text
+                adjustsFontSizeToFit={true}
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "fontSize": 68.57142857142857,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                    {
+                      "textShadowColor": "rgba(0, 0, 0, 0.6)",
+                      "textShadowOffset": {
+                        "height": 1,
+                        "width": -1,
+                      },
+                      "textShadowRadius": 10,
+                    },
+                  ]
+                }
+              >
+                EXPLORA
+              </Text>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 21.428571428571427,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "backgroundColor": "#FFFFFF",
+                      "borderRadius": 50,
+                      "height": 17.142857142857142,
+                      "width": 17.142857142857142,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "fontSize": 38.57142857142857,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  Innovación y creación tecnológica
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 21.428571428571427,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "backgroundColor": "#FFFFFF",
+                      "borderRadius": 50,
+                      "height": 17.142857142857142,
+                      "width": 17.142857142857142,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "fontSize": 38.57142857142857,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  UI/UX
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 21.428571428571427,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "backgroundColor": "#FFFFFF",
+                      "borderRadius": 50,
+                      "height": 17.142857142857142,
+                      "width": 17.142857142857142,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "fontSize": 38.57142857142857,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  Innovación
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "paddingHorizontal": 32.14285714285714,
+              },
+              {
+                "width": 750,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#FA4D09",
+                "borderRadius": 10,
+                "flex": 1,
+                "gap": 32.14285714285714,
+                "height": 784.7058823529411,
+                "paddingHorizontal": 42.857142857142854,
+                "paddingVertical": 32.14285714285714,
+              }
+            }
+          >
+            <Image
+              resizeMode="cover"
+              source={1}
+              style={
+                {
+                  "height": 385.7142857142857,
+                  "width": 385.7142857142857,
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "gap": 21.428571428571427,
+                  "paddingHorizontal": 42.857142857142854,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "alignSelf": "center",
+                    "backgroundColor": "#FFFFFF",
+                    "borderRadius": 10,
+                    "height": 5.885294117647058,
+                    "width": 300,
+                  }
+                }
+              />
+              <Text
+                adjustsFontSizeToFit={true}
+                numberOfLines={1}
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "fontSize": 68.57142857142857,
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    },
+                    {
+                      "textShadowColor": "rgba(0, 0, 0, 0.6)",
+                      "textShadowOffset": {
+                        "height": 1,
+                        "width": -1,
+                      },
+                      "textShadowRadius": 10,
+                    },
+                  ]
+                }
+              >
+                CONQUISTA
+              </Text>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 21.428571428571427,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "backgroundColor": "#FFFFFF",
+                      "borderRadius": 50,
+                      "height": 17.142857142857142,
+                      "width": 17.142857142857142,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "fontSize": 38.57142857142857,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  Desarrollo tecnológico y creación tecnológica
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 21.428571428571427,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "backgroundColor": "#FFFFFF",
+                      "borderRadius": 50,
+                      "height": 17.142857142857142,
+                      "width": 17.142857142857142,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "fontSize": 38.57142857142857,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  Ciberseguridad
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 21.428571428571427,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "backgroundColor": "#FFFFFF",
+                      "borderRadius": 50,
+                      "height": 17.142857142857142,
+                      "width": 17.142857142857142,
+                    }
+                  }
+                />
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "fontSize": 38.57142857142857,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  Servicios de la Nube
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "gap": 32.14285714285714,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 20,
+            "height": 32.14285714285714,
+            "width": 32.14285714285714,
+          },
+          {
+            "backgroundColor": "#FA4D09",
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 20,
+            "height": 32.14285714285714,
+            "width": 32.14285714285714,
+          },
+          false,
+        ]
+      }
+    />
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 20,
+            "height": 32.14285714285714,
+            "width": 32.14285714285714,
+          },
+          false,
+        ]
+      }
+    />
+  </View>
+</View>
+`;
