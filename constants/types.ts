@@ -7,6 +7,7 @@ import type {
   TextInputProps as DefaultTextInputProps,
   TouchableOpacityProps,
   ScrollViewProps,
+  ColorValue,
 } from 'react-native';
 
 export interface ServiceGroup {
@@ -58,6 +59,7 @@ export interface StepDotProps {
   status: StepStatus;
   size?: 'small' | 'large';
   number: number;
+  color?: ColorValue;
 }
 
 export interface TextInputProps extends DefaultTextInputProps {

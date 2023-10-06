@@ -5,7 +5,7 @@ import { Text } from './Text';
 import { COLORS, FONT } from '../constants/theme';
 import { StepDotProps } from '../constants/types';
 
-export function StepDot({ status, size, number }: StepDotProps) {
+export function StepDot({ status, size, number, color }: StepDotProps) {
   const fontSize = size === 'large' ? FONT.medium : FONT.small;
   const dotSize = fontSize * 2;
 
@@ -15,8 +15,11 @@ export function StepDot({ status, size, number }: StepDotProps) {
         styles.container,
         status === 'pending' ? styles.pending : styles.inProgress,
         { height: dotSize, width: dotSize },
+        color ? { borderColor: color } : null,
       ]}>
-      {status !== 'completed' && <Text style={[styles.text, { fontSize }]}>{number}</Text>}
+      {status !== 'completed' && (
+        <Text style={[styles.text, { fontSize, color: color ?? COLORS.white }]}>{number}</Text>
+      )}
       {status === 'completed' && <Icon name="check" size={FONT.small} color={COLORS.white} />}
     </View>
   );

@@ -8,7 +8,7 @@ import { StatusBar } from 'expo-status-bar';
 import { HeaderLogo } from '../components/Header.Logo';
 import { COLORS } from '../constants/theme';
 import { OnboardingScreen } from '../screens/Onboarding.Screen';
-import { SginUpScreen } from '../screens/SginUp.Screen';
+import { SignUpScreen } from '../screens/SignUp.Screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,7 +34,7 @@ export function Navigation() {
             presentation: 'modal',
           }}
           name="SignUp"
-          component={SginUpScreen}
+          component={SignUpScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

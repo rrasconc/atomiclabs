@@ -14,7 +14,7 @@ import { Text } from '../components/Text';
 import { api } from '../constants/api';
 import { IMAGES } from '../constants/files';
 import { globalStyles } from '../constants/styles';
-import { SPACING } from '../constants/theme';
+import { COLORS, SPACING } from '../constants/theme';
 import type { SignUpFormValues, StepStatus } from '../constants/types';
 import { signUpSchema } from '../constants/validations';
 
@@ -24,7 +24,7 @@ const initialValues = {
   phoneNumber: '',
 };
 
-export function SginUpScreen() {
+export function SignUpScreen() {
   const [currentStep, setCurrentStep] = useState<{ step: number; status: StepStatus }>({
     step: 1,
     status: 'inProgress',
@@ -82,7 +82,11 @@ export function SginUpScreen() {
         {currentStep.step !== 0 && (
           <Stepper progress={currentStep.step === 1 ? 0.35 : 1}>
             <StepDot number={1} status={currentStep.step === 1 ? 'inProgress' : 'completed'} />
-            <StepDot number={2} status={currentStep.step === 1 ? 'pending' : 'inProgress'} />
+            <StepDot
+              number={2}
+              status="pending"
+              color={currentStep.step === 1 ? COLORS.white : COLORS.orange}
+            />
           </Stepper>
         )}
 
